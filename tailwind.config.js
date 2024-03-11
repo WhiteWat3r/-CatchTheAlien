@@ -11,9 +11,9 @@ export default {
         'black-default': 'rgb(0, 0, 0)',
       },
       backgroundImage: {
-        'bg-1': "url('src/assets/images/backgrounds/bg-1.svg')",
-        'bg-2': "url('src/assets/images/backgrounds/bg-2.svg')",
-        'bg-3': "url('src/assets/images/backgrounds/bg-3.svg')",
+        'bg-1': 'url("/src/assets/images/backgrounds/bg-1.png")',
+        'bg-2': "url('/src/assets/images/backgrounds/bg-2.png')",
+        'bg-3': "url('/src/assets/images/backgrounds/bg-3.png')",
         bubble: "url('/src/assets/images/bubbles/bubble2.svg')",
         faultBubble: "url('/src/assets/images/bubbles/redBubble.svg')",
         hand: "url('/src/assets/images/hands/hand.svg')",
@@ -46,8 +46,8 @@ export default {
           '50%': { transform: 'translateY(-90px)' },
           '60%': { transform: 'translateY(-90px)' },
           '100%': { transform: 'translateY(-30px)' },
-          '0%, 29%, 100%': { background: "url('src/assets/images/hands/hand.svg')" },
-          '30%, 60%': { background: "url('src/assets/images/hands/hand2.svg')" },
+          '0%, 29%, 100%': { background: "url('/src/assets/images/hands/hand.svg')" },
+          '30%, 60%': { background: "url('/src/assets/images/hands/hand2.svg')" },
         },
         exitScreenAnimation: {
           '0%': { transform: 'translateY(0)' },
@@ -61,12 +61,12 @@ export default {
           '100%': { transform: 'translateY(-30px)' },
         },
         handClick: {
-          '0%, 29%, 100%': { background: "url('src/assets/images/hands/hand.svg')" },
-          '30%, 60%': { background: "url('src/assets/images/hands/hand2.svg')" },
+          '0%, 29%, 100%': { background: "url('/src/assets/images/hands/hand.svg')" },
+          '30%, 60%': { background: "url('/src/assets/images/hands/hand2.svg')" },
         },
         bubbleAppearance: {
           '0%, 29%, 95%, 100%': { background: 'none' },
-          '30%, 59%': { background: "url('src/assets/images/bubbles/bubble2.svg')" },
+          '30%, 59%': { background: "url('/src/assets/images/bubbles/bubble2.svg')" },
         },
         faultBubbleAppearance: {
           '0%, 29%, 95%, 100%': { background: 'none' },
