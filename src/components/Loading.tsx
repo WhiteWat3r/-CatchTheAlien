@@ -6,12 +6,37 @@ import alien3 from '../assets/images/aliens/alien3.svg';
 import alien4 from '../assets/images/aliens/alien4.svg';
 import alien5 from '../assets/images/aliens/alien5.svg';
 import smallAlien from '../assets/images/aliens/miniAlien.svg';
+import bgFirst from '../assets/images/backgrounds/bg-1.png';
+import bgSecond from '../assets/images/backgrounds/bg-2.png';
+import bgThird from '../assets/images/backgrounds/bg-3.png';
+import timer from '../assets/images/other/timer.svg';
+import hand from '../assets/images/hands/hand.svg';
+import ClickedHand from '../assets/images/hands/hand2.svg';
+import bubble from '../assets/images/bubbles/bubble.svg';
+import redBubble from '../assets/images/bubbles/redBubble.svg';
+import bubbleSecond from '../assets/images/bubbles//bubble2.svg';
 
 import { useDispatch } from 'react-redux';
 import { setCurrentScreen } from '../store/gameSlice';
 import { SCREENS } from '../types/screens';
 
-const images = [alien1, alien2, alien3, alien5, alien4, smallAlien];
+const images = [
+  alien1,
+  alien2,
+  alien3,
+  alien5,
+  alien4,
+  smallAlien,
+  bgFirst,
+  bgSecond,
+  ClickedHand,
+  bgThird,
+  redBubble,
+  bubble,
+  hand,
+  bubbleSecond,
+  timer
+];
 
 const Loading = () => {
   const dispatch = useDispatch();
