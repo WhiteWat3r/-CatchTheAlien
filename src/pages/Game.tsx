@@ -32,7 +32,7 @@ export const Game = () => {
       if (gameIsFinished) {
         dispatch(setGameResult(bubleAlienCounter < 5 ? 0 : bubleAlienCounter < 9 ? 1 : 2));
         dispatch(setCurrentScreen(SCREENS.THE_RESULT));
-        dispatch(setAlienCount(bubleAlienCounter))
+        dispatch(setAlienCount(bubleAlienCounter));
       }
     }, 2000);
   }, [gameIsFinished]);
@@ -91,29 +91,19 @@ export const Game = () => {
   };
 
   return (
-    <div className='flex flex-col justify-center h-full relative overflow-hidden'>
-      <div className='p-[10px] flex justify-between'>
-        <Counter counter={bubleAlienCounter} />
-        <Timer time={time} setTime={setTime} />
-      </div>
-
-
-
-
-
-
+    <div className="flex flex-col justify-center h-full relative overflow-hidden">
       {gameIsFinished ? (
-
-
-<div className='absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 flex flex-col justify-center items-center text-white-default'>
-<h1 className='uppercase text-[48px] mb-[100px]'>Конец!</h1>
-<p className='text-[18px] text-center line leading-[32px] '>ПОРА УЗНАТЬ РЕЗУЛЬТАТ...</p>
-</div>
-
-
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 flex flex-col justify-center items-center text-white-default">
+          <h1 className="uppercase text-[48px] mb-[100px]">Конец!</h1>
+          <p className="text-[18px] text-center line leading-[32px] ">ПОРА УЗНАТЬ РЕЗУЛЬТАТ...</p>
+        </div>
       ) : (
         <>
-          <div className='relative h-[400px] w-full'>
+          <div className="p-[10px] flex justify-between">
+            <Counter counter={bubleAlienCounter} />
+            <Timer time={time} setTime={setTime} />
+          </div>
+          <div className="relative h-[400px] w-full">
             {aliens.map((alien) => (
               <Alien
                 type={alien.type}
@@ -131,8 +121,6 @@ export const Game = () => {
           <Citizens />
         </>
       )}
-
-      
     </div>
   );
 };
