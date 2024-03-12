@@ -15,6 +15,9 @@ export const Result = () => {
   const { gameResult, alienCount } = useAppSelector((store) => store.game);
   const resultText = resultTexts[gameResult];
 
+
+
+
   const handleNavigate = () => {
     dispatch(setCurrentScreen(SCREENS.THE_GAME));
   }; // Навигация к игре
@@ -31,17 +34,17 @@ export const Result = () => {
         <span className="uppercase text-xs mt-8">Поделиться</span>
         <ul className="flex gap-4 mt-4">
           <li>
-            <TelegramShareButton url={'https://catch-the-alien.vercel.app'} title={resultText}>
+            <TelegramShareButton url={'https://catch-the-alien.vercel.app/' + 'bad.html'} title={'https://catch-the-alien.vercel.app/' + 'bad.html'}>
               <img src={thImg} alt="Телеграмм" className="w-16 h-16 hover:opacity-70" />
             </TelegramShareButton>
           </li>
           <li>
-            <OKShareButton url={'https://catch-the-alien.vercel.app'} title={resultText}>
+            <OKShareButton url={'https://catch-the-alien.vercel.app/ + good.html'} title={'https://catch-the-alien.vercel.app/' + 'bad.html'}>
               <img src={okImg} alt="Одноклассники" className="w-16 h-16 hover:opacity-70" />
             </OKShareButton>
           </li>
           <li>
-            <VKShareButton url={'https://catch-the-alien.vercel.app'} title={resultText}>
+            <VKShareButton url={'https://catch-the-alien.vercel.app/ + excellent.html'} title={'https://catch-the-alien.vercel.app/' + 'bad.html'}>
               <img src={vkImg} alt="Вконтактe" className="w-16 h-16 hover:opacity-70" />
             </VKShareButton>
           </li>
