@@ -41,7 +41,7 @@ export const Result = () => {
             </OKShareButton>
           </li>
           <li>
-            <VKShareButton url={'https://catch-the-alien.vercel.app/results/excellent.html'} >
+            <VKShareButton url={'https://catch-the-alien.vercel.app/results/bad.html'} >
               <img src={vkImg} alt="Вконтактe" className="w-16 h-16 hover:opacity-70" />
             </VKShareButton>
           </li>
