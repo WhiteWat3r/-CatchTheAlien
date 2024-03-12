@@ -18,11 +18,11 @@ export const OnBoarding = () => {
   const handleClick = () => {
     handleUpdate();
     step === 1 ? setStep(2) : dispatch(setCurrentScreen(SCREENS.THE_GAME));
-  };
+  }; // Смена шага/навигация, обновление key для перерисовки hand
 
   const handleUpdate = () => {
     setRenderKey(renderKey + 1);
-  };
+  }; // обновление key для перерисовки hand
 
   return (
     <div className="h-full pl-[22px] pt-[39px] pr-[19px] pb-[46px] box-border">

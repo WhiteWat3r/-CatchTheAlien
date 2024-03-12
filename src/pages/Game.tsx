@@ -20,23 +20,6 @@ export const Game = () => {
   const [aliens, setAliens] = useState<IAlien[]>([]);
   const [gameIsFinished, setGameIsFinished] = useState(false);
 
-  useEffect(() => {
-    if (time === 0 || bubleAlienCounter === 10) {
-      setGameIsFinished(true);
-      setAliens([]);
-    }
-  }, [time, bubleAlienCounter]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      if (gameIsFinished) {
-        dispatch(setGameResult(bubleAlienCounter < 5 ? 0 : bubleAlienCounter < 9 ? 1 : 2));
-        dispatch(setCurrentScreen(SCREENS.THE_RESULT));
-        dispatch(setAlienCount(bubleAlienCounter));
-      }
-    }, 2000);
-  }, [gameIsFinished]);
-
   const createAlien = (): void => {
     const newAlienType = Math.random() < 0.4 ? 'kind' : 'evil'; // плохие пришельцы появляются чаще, чтобы не добавлять чаще разных
     const randomIndex = Math.floor(Math.random() * kindPhrases.length);
@@ -54,22 +37,27 @@ export const Game = () => {
       (alien) =>
         Math.abs(newAlien.topPosition - alien.topPosition) < 20 &&
         Math.abs(newAlien.leftPosition - alien.leftPosition) < 20,
-    );
+    ); // определение позиции нового пришельца относительно уже созданных
 
     if (tooClose) {
-      // console.log('рядом');
       return createAlien();
     }
 
     setAliens([...aliens, newAlien]);
     setTimeout(() => {
       setAliens((prevAliens) => prevAliens.filter((a) => a.id !== newAlien.id));
-    }, 5000);
+    }, 5000); // удаление пришельца через 5 секунд после появления
   };
+
+  const handleAlienClick = (id: string) => {
+    setTimeout(() => {
+      setAliens((prevAliens) => prevAliens.filter((a) => a.id !== id));
+    }, 2000);
+  }; // обработка события клика по пришельца
 
   useEffect(() => {
     aliens.length === 0 && createAlien();
-  }, [aliens]);
+  }, [aliens]); // создание пришельца при пустом экране
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -78,17 +66,28 @@ export const Game = () => {
       }
     }, 1000);
     return () => clearInterval(intervalId);
-  }, [aliens]);
+  }, [aliens]); // создание пришельца каждую секунду, если их на экране меньше 3
 
   useEffect(() => {
     createAlien();
-  }, []);
+  }, []); //  создание пришельца при первоначальной инициализации
 
-  const handleAlienClick = (id: string) => {
+  useEffect(() => {
+    if (time === 0 || bubleAlienCounter === 10) {
+      setGameIsFinished(true);
+      setAliens([]);
+    }
+  }, [time, bubleAlienCounter]); // переход к загрузочному окну после окончания игры
+
+  useEffect(() => {
     setTimeout(() => {
-      setAliens((prevAliens) => prevAliens.filter((a) => a.id !== id));
+      if (gameIsFinished) {
+        dispatch(setGameResult(bubleAlienCounter < 5 ? 0 : bubleAlienCounter < 9 ? 1 : 2));
+        dispatch(setCurrentScreen(SCREENS.THE_RESULT));
+        dispatch(setAlienCount(bubleAlienCounter));
+      }
     }, 2000);
-  };
+  }, [gameIsFinished]); // сохранение результатов игры и навигация на след. страницу для их отображения
 
   return (
     <div className="flex flex-col justify-center h-full relative overflow-hidden">

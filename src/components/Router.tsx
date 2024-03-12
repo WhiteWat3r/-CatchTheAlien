@@ -26,5 +26,5 @@ export const Router: React.FC = () => {
       default:
         return <Start />;
     }
-  }, [currentScreen]);
+  }, [currentScreen]); // компонент навигации
 };

@@ -35,7 +35,7 @@ const images = [
   bubble,
   hand,
   bubbleSecond,
-  timer
+  timer,
 ];
 
 const Loading = () => {
@@ -71,7 +71,7 @@ const Loading = () => {
         dispatch(setCurrentScreen(SCREENS.THE_ONBOARDING));
         console.error('Ошибка загрузки изображений: ', e);
       });
-  }, []);
+  }, []); // навигация после загрузки всех изображений
 
   useEffect(() => {
     const interval = setInterval(
@@ -79,7 +79,7 @@ const Loading = () => {
       2000,
     );
     return () => clearInterval(interval);
-  });
+  }); // автоматически меняющийся текст загрузки изображений каждые 2 секунды.
 
   return (
     <div

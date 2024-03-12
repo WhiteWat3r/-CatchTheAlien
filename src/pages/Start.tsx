@@ -7,9 +7,10 @@ import { useAppDispatch } from '../store/store';
 
 export const Start = () => {
   const dispatch = useAppDispatch();
+
   const handleNavigate = () => {
     dispatch(setCurrentScreen(SCREENS.THE_LOADING));
-  };
+  }; // Навигация
 
   return (
     <div className="flex flex-col h-full box-border pt-[57px] pb-[55px] items-center gap-10 bg-black bg-opacity-50">

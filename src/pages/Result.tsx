@@ -12,13 +12,14 @@ import { SCREENS } from '../types/screens';
 export const Result = () => {
   const dispatch = useAppDispatch();
 
+  const { gameResult, alienCount } = useAppSelector((store) => store.game);
+  const resultText = resultTexts[gameResult];
+
   const handleNavigate = () => {
     dispatch(setCurrentScreen(SCREENS.THE_GAME));
-  };
+  }; // Навигация к игре
 
-  const { gameResult, alienCount } = useAppSelector((store) => store.game);
 
-  const resultText = resultTexts[gameResult];
 
   return (
     <div className="flex h-full bg-bg-3 text-center pt-[39px] pl-[22px] pb-[46px] pr-[19px] text-white-default">

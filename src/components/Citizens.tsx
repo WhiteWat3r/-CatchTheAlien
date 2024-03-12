@@ -23,11 +23,11 @@ export const Citizens = () => {
     setTimeout(() => {
       setCitizens((prevCitizens) => prevCitizens.filter((c) => c.id !== newCitizen.id));
     }, 10000);
-  };
+  }; // создание жителя
 
   useEffect(() => {
     createRandomCitizen();
-  }, []);
+  }, []); // создание первого жителя при инициализации
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -35,7 +35,7 @@ export const Citizens = () => {
     }, 3333);
 
     return () => clearInterval(intervalId);
-  }, [citizens]);
+  }, [citizens]); // создание жителя каждые 3.3 секунды
 
   return (
     <div className="h-[200px] relative">

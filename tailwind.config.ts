@@ -1,7 +1,13 @@
-/** @type {import('tailwindcss').Config} */
-export default {
+import type { Config } from 'tailwindcss'
+
+
+
+const config: Config = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    screens: {
+      desktop: '700px',
+    },
     extend: {
       colors: {
         'orange-default': '#FFBF1A',
@@ -73,15 +79,8 @@ export default {
           '30%, 59%': { background: "url('/src/assets/images/bubbles/redBubble.svg')" },
         },
         appear: {
-          from: { opacity: 0 },
-          to: { opacity: 1 },
-        },
-        leftMove: {
-          '0%': { left: '0' },
-          '25%': { left: '25%' },
-          '50%': { left: '50%' },
-          '75%': { left: '75%' },
-          '100%': { left: '105%' },
+          from: { opacity: '0' },
+          to: { opacity: '1' },
         },
         righMove: {
           '0%': { right: '0' },
@@ -140,3 +139,5 @@ export default {
   },
   plugins: [],
 };
+
+export default config
