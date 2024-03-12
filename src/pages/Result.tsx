@@ -31,17 +31,17 @@ export const Result = () => {
         <span className="uppercase text-xs mt-8">Поделиться</span>
         <ul className="flex gap-4 mt-4">
           <li>
-            <TelegramShareButton url={'https://catch-the-alien.vercel.app/results/excellent.html'} htmlTitle='https://catch-the-alien.vercel.app/results/excellent.html' title={'https://catch-the-alien.vercel.app/results/excellent.html'}>
+            <TelegramShareButton url={'https://catch-the-alien.vercel.app/results/excellent.html'} >
               <img src={thImg} alt="Телеграмм" className="w-16 h-16 hover:opacity-70" />
             </TelegramShareButton>
           </li>
-          {/* <li>
-            <OKShareButton url={'https://catch-the-alien.vercel.app/results/excellent.html'} htmlTitle='https://catch-the-alien.vercel.app/results/excellent.html' title={'https://catch-the-alien.vercel.app/results/excellent.html'}>
+          <li>
+            <OKShareButton url={'https://catch-the-alien.vercel.app/results/excellent.html'}>
               <img src={okImg} alt="Одноклассники" className="w-16 h-16 hover:opacity-70" />
             </OKShareButton>
-          </li> */}
+          </li>
           <li>
-            <VKShareButton url={'https://vk.com/share.php?url=https://catch-the-alien.vercel.app/results/bad.html'}>
+            <VKShareButton url={'https://catch-the-alien.vercel.app/results/excellent.html'} >
               <img src={vkImg} alt="Вконтактe" className="w-16 h-16 hover:opacity-70" />
             </VKShareButton>
           </li>
