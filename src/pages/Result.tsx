@@ -31,7 +31,7 @@ export const Result = () => {
         <span className="uppercase text-xs mt-8">Поделиться</span>
         <ul className="flex gap-4 mt-4">
           <li>
-            <TelegramShareButton url={'https://catch-the-alien.vercel.app'} title={'https://catch-the-alien.vercel.app/results/excellent.html'}>
+            <TelegramShareButton url={'https://catch-the-alien.vercel.app/results/excellent.html'} htmlTitle='https://catch-the-alien.vercel.app/results/excellent.html' title={'https://catch-the-alien.vercel.app/results/excellent.html'}>
               <img src={thImg} alt="Телеграмм" className="w-16 h-16 hover:opacity-70" />
             </TelegramShareButton>
           </li>
