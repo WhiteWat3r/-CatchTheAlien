@@ -35,13 +35,13 @@ export const Result = () => {
               <img src={thImg} alt="Телеграмм" className="w-16 h-16 hover:opacity-70" />
             </TelegramShareButton>
           </li>
-          <li>
+          {/* <li>
             <OKShareButton url={'https://catch-the-alien.vercel.app/results/excellent.html'} htmlTitle='https://catch-the-alien.vercel.app/results/excellent.html' title={'https://catch-the-alien.vercel.app/results/excellent.html'}>
               <img src={okImg} alt="Одноклассники" className="w-16 h-16 hover:opacity-70" />
             </OKShareButton>
-          </li>
+          </li> */}
           <li>
-            <VKShareButton url={'https://catch-the-alien.vercel.app/results/excellent.html'} htmlTitle='https://catch-the-alien.vercel.app/results/excellent.html' title={'https://catch-the-alien.vercel.app/results/excellent.html'}>
+            <VKShareButton url={'https://vk.com/share.php?url=https://catch-the-alien.vercel.app/results/bad.html'}>
               <img src={vkImg} alt="Вконтактe" className="w-16 h-16 hover:opacity-70" />
             </VKShareButton>
           </li>
