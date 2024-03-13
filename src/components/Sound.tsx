@@ -14,14 +14,14 @@ const Sound = () => {
   const toggleSound = () => {
     dispatch(setIsSoundOn());
   }; // включение/выключение фоновой музыки
-  
+
   useEffect(() => {
     if (isSoundOn) {
       setCurrentMusic(
         currentRoute === 'THE_GAME' ? '/music/gameMusic.mp3' : '/music/defaultMusic.mp3',
       );
     }
-  }, [currentRoute, isSoundOn]); // Обновляем музыку только при изменении роута или состояния звука
+  }, [currentRoute, isSoundOn]); // обновление музыки только при изменении роута или состояния звука
 
   useEffect(() => {
     if (audioRef.current) {
@@ -31,7 +31,7 @@ const Sound = () => {
         audioRef.current.play();
       }
     }
-  }, [currentMusic, isSoundOn]); // Обновляем воспроизведение при изменении музыки или состояния звука
+  }, [currentMusic, isSoundOn]); // обновление воспроизведения при изменении музыки или состояния звука
 
 
 
