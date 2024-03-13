@@ -26,7 +26,7 @@ export const OnBoarding = () => {
 
   return (
     <div className="h-full pl-[22px] pt-[39px] pr-[19px] pb-[46px] box-border">
-      <div className="bg-bg-2 flex  h-full box-border flex-col items-center pt-[29px] pb-[40px]">
+      <div className="bg-bg-2 bg-cover bg-center flex  h-full box-border flex-col items-center pt-[29px] pb-[40px]">
         {step === 1 ? (
           <div
             className={classNames(

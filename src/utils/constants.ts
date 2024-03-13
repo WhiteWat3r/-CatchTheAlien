@@ -9,6 +9,8 @@ import citizen2 from '../assets/images/citizens/men2.svg';
 import citizen3 from '../assets/images/citizens/men3.svg';
 import citizen4 from '../assets/images/citizens/men4.svg';
 
+export const baseUrl = 'https://catch-the-alien.vercel.app'
+
 export const alienImgs = [alien1, alien2, alien3, alien4, alien5];
 
 export const kindPhrases = [

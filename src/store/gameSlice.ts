@@ -5,12 +5,14 @@ interface IGameState {
   currentScreen: SCREENS;
   gameResult: number;
   alienCount: number;
+  isSoundOn: boolean;
 }
 
 const gameState: IGameState = {
   currentScreen: SCREENS.THE_START,
   gameResult: 0,
-  alienCount: 0
+  alienCount: 0,
+  isSoundOn: false
 };
 
 export const gameSlice = createSlice({
@@ -26,7 +28,10 @@ export const gameSlice = createSlice({
     setAlienCount: (state, action) => {
         state.alienCount = action.payload;
       },
+      setIsSoundOn: (state) => {
+        state.isSoundOn = !state.isSoundOn;
+      },
   },
 });
 
-export const { setCurrentScreen, setGameResult, setAlienCount} = gameSlice.actions;
+export const { setCurrentScreen, setGameResult, setAlienCount, setIsSoundOn} = gameSlice.actions;

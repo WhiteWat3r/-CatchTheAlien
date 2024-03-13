@@ -90,7 +90,7 @@ export const Game = () => {
   }, [gameIsFinished]); // сохранение результатов игры и навигация на след. страницу для их отображения
 
   return (
-    <div className="flex flex-col justify-center h-full relative overflow-hidden">
+    <div className="flex flex-col justify-between h-full relative overflow-hidden">
       {gameIsFinished ? (
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 flex flex-col justify-center items-center text-white-default">
           <h1 className="uppercase text-[48px] mb-[100px]">Конец!</h1>
@@ -98,7 +98,7 @@ export const Game = () => {
         </div>
       ) : (
         <>
-          <div className="p-[10px] flex justify-between">
+          <div className="p-[10px] flex justify-end gap-[5px]">
             <Counter counter={bubleAlienCounter} />
             <Timer time={time} setTime={setTime} />
           </div>
