@@ -1,8 +1,11 @@
-import bubble from '../assets/images/bubbles/bubble.svg';
-import redBubble from '../assets/images/bubbles/redBubble.svg';
-
 import { memo, useState } from 'react';
 import classNames from 'classnames';
+
+import bubble from '../assets/images/bubbles/bubble.svg';
+import redBubble from '../assets/images/bubbles/redBubble.svg';
+import kindAlienClick from '/music/kindAlienClick.mp3';
+import evilAlienClick from '/music/evilAlienClick.mp3';
+import { useAppSelector } from '../store/store';
 
 interface IAlienProps {
   type?: 'kind' | 'evil';
@@ -27,16 +30,27 @@ export const Alien = memo(
     const [showBubble, setShowBubble] = useState(false);
     const [isOut, setIsOut] = useState(false);
 
+    const isSoundOn = useAppSelector((store) => store.game.isSoundOn);
+
     const handleAlienClick = () => {
       setIsOut(!isOut);
       onClick();
+    
+      const soundFile = type === 'kind' ? kindAlienClick : evilAlienClick;
+    
       if (type === 'kind') {
         setBubleAlienCounter((prevCount) => (prevCount > 0 ? prevCount - 1 : 0));
       } else {
         setBubleAlienCounter((prevCount) => prevCount + 1);
       }
+    
+      if (isSoundOn) {
+        const audio = new Audio(soundFile);
+        audio.play();
+      }
+    
       setShowBubble(true);
-    }; // обработчик клика по пришелецу, при нажатии он исчезает и отображается бабл
+    }; // обработчик клика по пришелецу, при нажатии играет музыка, он исчезает и отображается бабл
     return (
       <div
         className={classNames(

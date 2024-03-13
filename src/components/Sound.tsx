@@ -6,15 +6,17 @@ import { setIsSoundOn } from '../store/gameSlice';
 
 const Sound = () => {
   const dispatch = useAppDispatch();
-  const isSoundOn = useAppSelector((store) => store.game.isSoundOn);
+
   const [currentMusic, setCurrentMusic] = useState('/music/defaultMusic.mp3');
-  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const isSoundOn = useAppSelector((store) => store.game.isSoundOn);
   const currentRoute = useAppSelector((store) => store.game.currentScreen);
+
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   const toggleSound = () => {
     dispatch(setIsSoundOn());
-  }; // включение/выключение фоновой музыки
-
+  }; // включение/выключение звука
   useEffect(() => {
     if (isSoundOn) {
       setCurrentMusic(
@@ -32,8 +34,6 @@ const Sound = () => {
       }
     }
   }, [currentMusic, isSoundOn]); // обновление воспроизведения при изменении музыки или состояния звука
-
-
 
   return (
     <>
