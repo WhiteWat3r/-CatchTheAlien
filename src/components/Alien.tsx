@@ -36,8 +36,7 @@ export const Alien = memo(
         setBubleAlienCounter((prevCount) => prevCount + 1);
       }
       setShowBubble(true);
-    };
-
+    }; // обработчик клика по пришелецу, при нажатии он исчезает и отображается бабл
     return (
       <div
         className={classNames(
