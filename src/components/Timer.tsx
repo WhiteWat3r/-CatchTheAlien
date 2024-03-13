@@ -33,7 +33,7 @@ export const Timer = ({ time, setTime }: ITimerProps) => {
   return (
     <div
       className={classNames(
-        'w-[147px] h-[47px] bg-aquamarine rounded-2xl border-black-default border-4 box-border flex items-center gap-[10px] z-2 justify-center',
+        'w-[140px] h-[47px] bg-aquamarine rounded-2xl border-black-default border-4 box-border flex items-center gap-[10px] z-2 justify-center',
         time < 10
           ? 'text-red-default border-red-default'
           : 'text-black-default border-black-default',

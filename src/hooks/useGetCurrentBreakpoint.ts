@@ -2,7 +2,6 @@ import resolveConfig from 'tailwindcss/resolveConfig';
 const fullConfig = resolveConfig(tailwindConfig);
 import tailwindConfig from '../../tailwind.config';
 const screens = fullConfig.theme.screens;
-console.log(screens);
 
 // Находит текущий breakpoint из экранов Tailwind и возвращает его вместе с его значением, если находит подходящий
 export const useGetCurrentBreakpoint = (): {
